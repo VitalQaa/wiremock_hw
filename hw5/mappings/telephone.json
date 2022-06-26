@@ -1,0 +1,15 @@
+{
+    "request": {
+        "urlPathPattern": "/telephone",
+        "queryParameters": {
+            "telephone_number": {
+                "matches": "^((.+7)+([0-9]){10})$"
+            }
+        },
+        "method": "GET"
+    },
+    "response": {
+        "status": 200,
+        "body" : "{\"my telephone number is:{{request.query.telephone_number}}\"}"
+    }
+}

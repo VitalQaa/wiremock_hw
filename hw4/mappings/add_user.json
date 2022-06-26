@@ -1,0 +1,28 @@
+{
+    "request": {
+        "method": "POST",
+        "url": "/adduser",
+		"bodyPatterns": [
+			{
+				"contains": "name"
+			},
+			{
+				"contains": "age"
+			},
+			{
+				"contains": "language"
+			},
+			{
+				"contains": "nationality"
+			}
+		]
+
+    },
+    "response": {
+        "status": 201,
+        "headers":{
+        	"Content-Type":"text/plain"
+        },
+        "body": "User {{jsonPath request.body '$.name'}} is created!"
+    }
+}

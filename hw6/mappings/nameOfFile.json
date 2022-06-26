@@ -1,0 +1,19 @@
+{
+    "request": {
+        "urlPathPattern": "/file",
+        "queryParameters": {
+            "format": {
+                "matches": "^((..)+([a-zA-Z0-9])*)$"
+            },
+			"filename": {
+				"matches": "[1-3]*"
+			}
+        },
+        "method": "GET"
+    },
+    "response": {
+        "status": 200,
+        "body" : "{\"my file is: file{{request.query.filename}}{{request.query.format}}\"}",
+		"fixedDelayMilliseconds": 1000
+    }
+}

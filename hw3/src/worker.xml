@@ -1,0 +1,7 @@
+<Worker>
+    <firstname>Ivan</firstname>
+    <lastname>Ivanov</lastname>
+    <patronymic>Ivanovich</patronymic>
+    <experience>35</experience>
+    <salary>50000</salary>
+</Worker>

@@ -1,0 +1,10 @@
+{
+	"request": { 
+		"urlPathPattern": "/users/([a-zA-Z]*)",
+		"method": "GET"
+	},
+	"response": {
+		"status": 200,
+		"bodyFileName": "{{request.pathSegments.[1]}}.json"
+	}
+}

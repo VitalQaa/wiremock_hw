@@ -1,0 +1,18 @@
+{
+    "request": {
+        "method": "PUT",
+        "urlPath": "/users/Rossum"
+    },
+    "response": {
+        "status": 201,
+        "jsonBody": {
+			"name": "Guido van Rossum",
+			"age": "{{jsonPath request.body '$.age'}}",
+			"language": "Python",
+			"nationality": "Dutch"
+		},
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

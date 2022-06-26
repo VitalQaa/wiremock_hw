@@ -1,0 +1,27 @@
+{
+	"request": { 
+		"url": "/users",
+		"method": "GET",
+		"bodyPatterns":
+		[
+			{
+				"matchesXPath": "users[count(user[age>18]) = 3 and count(user) = 3]"
+			},
+			{
+				"matchesXPath": "users[count(user[starts-with(name, 'user')]) = 3]"
+			},
+			{
+				"matchesXPath": "users[count(user[string-length(translate(name, '1234567890', '')) = 4]) = 3]"
+			}
+		]
+	},
+    "response": {
+        "body": "{{#each (xPath request.body '/users/user/name') as |element|}}{{{element.text}}} {{/each}}",
+        "status" : 200,
+		"delayDistribution": {
+			"type": "uniform",
+			"lower": 440,
+			"upper": 460
+		}
+    }
+}
